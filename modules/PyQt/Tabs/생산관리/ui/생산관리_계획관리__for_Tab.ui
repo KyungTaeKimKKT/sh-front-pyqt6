@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1345</width>
+    <height>853</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="vLayout_main">
+   <item>
+    <widget class="Wid_Search_for" name="Wid_Search_for" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="Pagination_for_table" name="wid_pagination" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="PB_dday">
+        <property name="text">
+         <string>D-DAY설정</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>1220</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="생산지시서_종류_Selector" name="wid_Jongru" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="PB_apply_plan">
+        <property name="text">
+         <string>생산계획 반영</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="Wid_Table_for_생산관리_계획관리" name="Wid_Table" native="true"/>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Wid_Search_for</class>
+   <extends>QWidget</extends>
+   <header location="global">modules.PyQt.component.search.Wid_search_for</header>
+   <container>1</container>
+   <slots>
+    <signal>singnal_search(dict)</signal>
+   </slots>
+  </customwidget>
+  <customwidget>
+   <class>Pagination_for_table</class>
+   <extends>QWidget</extends>
+   <header location="global">modules.PyQt.component.pagination_for_table</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>생산지시서_종류_Selector</class>
+   <extends>QWidget</extends>
+   <header>modules.PyQt.component.radio_btns_group</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Wid_Table_for_생산관리_계획관리</class>
+   <extends>QWidget</extends>
+   <header>modules.PyQt.Tabs.생산관리.tables.생산관리_계획관리_Wid_Table</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Tab_Common</class>
+ <widget class="QWidget" name="Tab_Common">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1670</width>
+    <height>853</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QVBoxLayout" name="v_info">
+     <item>
+      <widget class="Wid_Info" name="wid_info" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="h_search">
+     <item>
+      <widget class="Wid_Search_Common" name="wid_search" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="v_pagination">
+     <item>
+      <widget class="Wid_Page_Common" name="wid_pagination" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="v_table"/>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Wid_Search_Common</class>
+   <extends>QWidget</extends>
+   <header location="global">modules.PyQt.Tabs.plugins.ui.Wid_search_common</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Wid_Page_Common</class>
+   <extends>QWidget</extends>
+   <header location="global">modules.PyQt.Tabs.plugins.ui.Wid_page_common</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Wid_Info</class>
+   <extends>QWidget</extends>
+   <header location="global">modules.PyQt.Tabs.plugins.ui.Wid_info</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1080</width>
+    <height>1261</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QFrame" name="frame_1">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="font">
+          <font>
+           <pointsize>24</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>부적합 보고서(NCR)</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_Bunru">
+         <property name="title">
+          <string>분류</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QRadioButton" name="radioButton_Gonjong">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>공정품</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButton_Wan">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>완제품</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButton_Gogaek">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>고객불만</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_Gubun">
+         <property name="title">
+          <string>구분</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QRadioButton" name="radioButton_Sanae">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>사내</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButton_Saoi_2">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>사외</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButton_Claim">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string> CLAIM</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_2">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>부적합 내용</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_Bujek">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>2</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>귀책 공정</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_Guichak">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>1</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_3">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QFrame" name="frame_3_1">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="4" column="0">
+           <widget class="QLabel" name="label_17">
+            <property name="text">
+             <string>자재명</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="7">
+           <widget class="QComboBox" name="comboBox_Danwi">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="6" colspan="2">
+           <widget class="QComboBox" name="comboBox_Sojae"/>
+          </item>
+          <item row="3" column="2" colspan="3">
+           <widget class="QLineEdit" name="lineEdit_Oijang"/>
+          </item>
+          <item row="0" column="5">
+           <widget class="QLabel" name="label_6">
+            <property name="text">
+             <string>발견자</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="5">
+           <widget class="QLabel" name="label_10">
+            <property name="text">
+             <string>OP</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="5">
+           <widget class="QLabel" name="label_9">
+            <property name="text">
+             <string>작성자</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="5">
+           <widget class="QLabel" name="label_15">
+            <property name="text">
+             <string>소재</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>발행번호</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>고객사</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="4">
+           <widget class="QDateEdit" name="dateEdit_Jansung"/>
+          </item>
+          <item row="1" column="2">
+           <widget class="QComboBox" name="comboBox_Gogaksa"/>
+          </item>
+          <item row="0" column="4">
+           <widget class="QDateEdit" name="dateEdit_Balsang"/>
+          </item>
+          <item row="2" column="2" colspan="3">
+           <widget class="QLineEdit" name="lineEdit_Hyunjang"/>
+          </item>
+          <item row="4" column="5">
+           <widget class="QLabel" name="label_18">
+            <property name="text">
+             <string>수량</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="6" colspan="2">
+           <widget class="QLineEdit" name="lineEdit_OP"/>
+          </item>
+          <item row="0" column="3">
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>발생일자</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_16">
+            <property name="text">
+             <string>의장명</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLineEdit" name="lineEdit_Balhaeng">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_14">
+            <property name="text">
+             <string>현장명</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="2" colspan="3">
+           <widget class="QLineEdit" name="lineEdit_Jajae"/>
+          </item>
+          <item row="1" column="3">
+           <widget class="QLabel" name="label_8">
+            <property name="text">
+             <string>작성일자</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="6">
+           <widget class="QSpinBox" name="spinBox_Surang">
+            <property name="maximum">
+             <number>10000</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="6" colspan="2">
+           <widget class="QLineEdit" name="lineEdit_Jansung"/>
+          </item>
+          <item row="0" column="6" colspan="2">
+           <widget class="QLineEdit" name="lineEdit_Balgyun">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <layout class="QGridLayout" name="gridLayout_1">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_19">
+           <property name="text">
+            <string>1. 부적합 내용</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QTextEdit" name="textEdit_Bujekhab"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_21">
+           <property name="text">
+            <string>2. 부적합 상세</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QTableWidget" name="tableWidget_Bujek">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <row>
+            <property name="text">
+             <string>1</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>2</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>3</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>4</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>5</string>
+            </property>
+           </row>
+           <column>
+            <property name="text">
+             <string>품목</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>부적합수량</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>부적합내용</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>원인</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>귀책부서</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>조치방안</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>조치일정</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QGridLayout" name="gridLayout_3">
+         <item row="3" column="0">
+          <widget class="QTextEdit" name="textEdit_Iljung"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QTextEdit" name="textEdit_ImsiJochi">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>2</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QGroupBox" name="groupBox_Jochi">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>1</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="title">
+            <string>조치사항</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <widget class="QRadioButton" name="radioButton_Singu">
+              <property name="text">
+               <string>신규재작업</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="radioButton_Gumto">
+              <property name="text">
+               <string>검토</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="radioButton_Bosu">
+              <property name="text">
+               <string>보수작업</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_23">
+           <property name="text">
+            <string>4. 재작업 및 교체 일정 사항 통보</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_22">
+           <property name="text">
+            <string>3. 임시 조치방안(품질부서에서 불만 확인 후 임시조치사항을 기록합니다)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QTableWidget" name="tableWidget_Qcost">
+           <row>
+            <property name="text">
+             <string>합계</string>
+            </property>
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="background">
+             <color>
+              <red>249</red>
+              <green>240</green>
+              <blue>107</blue>
+             </color>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>소재비</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>의장비</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>코팅비</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>판금비</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>운송비</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>설치비</string>
+            </property>
+           </row>
+           <column>
+            <property name="text">
+             <string>금액</string>
+            </property>
+            <property name="toolTip">
+             <string comment="숫자만 입력 가능합니다."/>
+            </property>
+            <property name="textAlignment">
+             <set>AlignTrailing|AlignVCenter</set>
+            </property>
+           </column>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLabel" name="label_11">
+           <property name="text">
+            <string>예상 품질비용 (실패비용: 단위 원)</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1080</width>
+     <height>28</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

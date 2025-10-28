@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1759</width>
+    <height>1137</height>
+   </rect>
+  </property>
+  <property name="cursor">
+   <cursorShape>UpArrowCursor</cursorShape>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLCDNumber" name="lcdNumber_Clock">
+    <property name="geometry">
+     <rect>
+      <x>1440</x>
+      <y>10</y>
+      <width>311</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="digitCount">
+     <number>8</number>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame_Connection">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>50</y>
+      <width>431</width>
+      <height>1021</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:3px solid black;
+background-color:black;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label_Camera">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>110</y>
+       <width>391</width>
+       <height>351</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>ArrowCursor</cursorShape>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../../../assets/PyQt6/images/cam-img.png</pixmap>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="textBrowser_SpeechToText">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>480</y>
+       <width>391</width>
+       <height>201</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:white</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="textEdit_TTS">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>680</y>
+       <width>391</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:white;
+</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_TTS">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>790</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:white;</string>
+     </property>
+     <property name="text">
+      <string>Voice송신</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_ConnectionTime_Title">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>980</y>
+       <width>71</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:white;</string>
+     </property>
+     <property name="text">
+      <string>연결시간</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_connection_time_text">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>980</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:white;</string>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_Ctl_Connection">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>50</y>
+       <width>171</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:white;</string>
+     </property>
+     <property name="text">
+      <string>연결종료</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_Frame_Title">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>10</y>
+       <width>361</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:yellow;</string>
+     </property>
+     <property name="text">
+      <string>미연결</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_Network_Speed_text">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>980</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:white;
+</string>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_fileSelector">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>870</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:white;</string>
+     </property>
+     <property name="text">
+      <string>file선택</string>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="textBrowser_fileTransfer">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>870</y>
+       <width>291</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:white;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_fileTransfer">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>910</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:white;</string>
+     </property>
+     <property name="text">
+      <string>전송</string>
+     </property>
+    </widget>
+    <zorder>textBrowser_SpeechToText</zorder>
+    <zorder>label_Camera</zorder>
+    <zorder>textEdit_TTS</zorder>
+    <zorder>pushButton_TTS</zorder>
+    <zorder>label_ConnectionTime_Title</zorder>
+    <zorder>label_connection_time_text</zorder>
+    <zorder>pushButton_Ctl_Connection</zorder>
+    <zorder>label_Frame_Title</zorder>
+    <zorder>label_Network_Speed_text</zorder>
+    <zorder>pushButton_fileSelector</zorder>
+    <zorder>textBrowser_fileTransfer</zorder>
+    <zorder>pushButton_fileTransfer</zorder>
+   </widget>
+   <widget class="QFrame" name="frame_Network_Status">
+    <property name="geometry">
+     <rect>
+      <x>1540</x>
+      <y>980</y>
+      <width>211</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label_WS_status">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>70</y>
+       <width>51</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">width: 30px;
+height: 30px;
+border-radius: 10px;
+border: 3px solid blue;
+background-color:blue;
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_Ethernet_Status">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>71</y>
+       <width>51</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">width: 30px;
+height: 30px;
+border-radius: 10px;
+border: 3px solid blue;
+background-color:blue;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_Web_Socket_Title">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>40</y>
+       <width>91</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Web-Socket</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_Ethernet_Title">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>91</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Ethernet</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_Network_Status_label">
+     <property name="geometry">
+      <rect>
+       <x>6</x>
+       <y>3</y>
+       <width>201</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size:24px;background-color:yellow;font-weight:bold</string>
+     </property>
+     <property name="text">
+      <string>Network Status</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame_Ready_Clients">
+    <property name="geometry">
+     <rect>
+      <x>29</x>
+      <y>159</y>
+      <width>1721</width>
+      <height>801</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:white;
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QFrame" name="frame_ready_client">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>70</y>
+       <width>341</width>
+       <height>301</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="label_Ready_Client">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>50</y>
+        <width>251</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 2px solid black;
+background-color : green;
+color : white;</string>
+      </property>
+      <property name="text">
+       <string>RPi정보</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_Ready_Client">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>220</y>
+        <width>251</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>연결</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <zorder>lcdNumber_Clock</zorder>
+   <zorder>frame_Network_Status</zorder>
+   <zorder>frame_Ready_Clients</zorder>
+   <zorder>frame_Connection</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1759</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuSystem">
+    <property name="title">
+     <string>System</string>
+    </property>
+    <addaction name="actionStart"/>
+    <addaction name="actionEnd"/>
+   </widget>
+   <addaction name="menuSystem"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="cursor">
+    <cursorShape>ArrowCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:blue;
+font-weight:bold;
+</string>
+   </property>
+  </widget>
+  <action name="actionStart">
+   <property name="text">
+    <string>Start</string>
+   </property>
+  </action>
+  <action name="actionEnd">
+   <property name="text">
+    <string>End</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

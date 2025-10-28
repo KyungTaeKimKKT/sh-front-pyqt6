@@ -1,0 +1,36 @@
+name: front_app
+
+services:
+  app:
+    image: shinwoohipo/front_app:latest
+    container_name: front_app
+    # build:
+      # context: .
+      # dockerfile: Dockerfile   
+    privileged: true
+
+    volumes:
+      - .:/app
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      # - uwsgi_data:/tmp/uwsgi/
+      # - media_data:/vol/django/media
+    environment:
+      - TZ=Asia/Seoul
+      - DISPLAY=${DISPLAY}
+    command: >
+      sh -c "python main.py"
+
+    # env_file:
+    #   - ./api/.env
+    
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock      
+      # - /home/pi/.docker/config.json:/config.json
+    
+    environment:
+      TZ: Asia/Seoul
+      WATCHTOWER_CLEANUP: 'true'
+    command: --interval 30

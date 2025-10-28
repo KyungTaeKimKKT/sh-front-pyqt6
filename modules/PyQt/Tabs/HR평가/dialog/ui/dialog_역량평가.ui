@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog_Yokyang</class>
+ <widget class="QDialog" name="Dialog_Yokyang">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1123</width>
+    <height>535</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>역량평가 항목</string>
+  </property>
+  <widget class="QListWidget" name="listWidget_before">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>70</y>
+     <width>421</width>
+     <height>431</height>
+    </rect>
+   </property>
+   <property name="selectionMode">
+    <enum>QAbstractItemView::ExtendedSelection</enum>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="listWidget_after">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>70</y>
+     <width>421</width>
+     <height>431</height>
+    </rect>
+   </property>
+   <property name="defaultDropAction">
+    <enum>Qt::CopyAction</enum>
+   </property>
+   <property name="selectionMode">
+    <enum>QAbstractItemView::ExtendedSelection</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="PB_Select">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>130</y>
+     <width>89</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Select</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="PB_Unselect">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>340</y>
+     <width>89</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>UnSelect</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="PB_Save">
+   <property name="geometry">
+    <rect>
+     <x>1010</x>
+     <y>20</y>
+     <width>89</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>저장</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

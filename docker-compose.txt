@@ -1,0 +1,4 @@
+docker-compose -f docker-compose.prod.yml build
+docker image prune
+docker image ls
+docker push shinwoohipo/sh-backend-app:latest
