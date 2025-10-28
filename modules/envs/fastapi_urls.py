@@ -11,7 +11,7 @@ class FastAPI_URLS(API_URLS):
     def get_URL(cls, name: str) -> str:
         base_url = getattr(cls, name, None)
         if base_url:
-            return f"fastapi/{base_url}"
+            return f"{base_url}"
         raise AttributeError(f"{name} not found in API_URLS")
     
 

@@ -29,6 +29,7 @@ from modules.global_event_bus import event_bus
 from modules.utils.api_fetch_worker import Api_Fetch_Worker
 from plugin_main.timer_handler import Timer_Handler
 
+from plugin_main import logging_loki as loki
 from plugin_main.dialog.trace_gbus_dialog import MessageTraceView_Dialog
 from plugin_main.dialog.trace_time_dialog import TimeTraceView_Dialog
 from plugin_main.dialog.trace_logger_dialog import LoggerTraceView_Dialog
@@ -71,6 +72,7 @@ ST = StyleSheet()
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 INFO.set_base_dir(BASE_DIR)
 
+
 #### crash용 파일 생성
 CRASH_VIDEO_FILE = 'crash_video.mp4'
 # 예외 처리기 설정
@@ -78,9 +80,7 @@ setup_exception_handlers()
 
 
 import traceback
-from modules.logging_config import get_plugin_logger
 
-logger = get_plugin_logger()
 
 from plugin_main.ui.toolbar_manager import ToolbarManager
 from plugin_main.ui.menu_manager import MenuManager
@@ -188,7 +188,7 @@ class WSClient(QObject):
 					except websockets.ConnectionClosed as e:
 						# 서버에서 연결 끊겼을 때
 						self.connection_changed.emit(self.url, False)
-						logger.warning(f"WebSocket connection closed: {e}")
+						loki.warning(f"WebSocket connection closed: {e}")
 						retries += 1
 						await asyncio.sleep(self.retry_delay)
 
@@ -415,7 +415,7 @@ class MainWindow(QtWidgets.QMainWindow ):
 
 		frames = self.debug_recording_max_frames		
 		if not frames:
-			logger.warning("녹화된 프레임이 없습니다.")
+			loki.warning("녹화된 프레임이 없습니다.")
 			return
 		
 		target_frames, w, h = normalize_frames_by_largest(frames)
@@ -431,7 +431,7 @@ class MainWindow(QtWidgets.QMainWindow ):
 				pil_img = utils.pixmap_to_pil(frame)
 				process.stdin.write(pil_img.tobytes())
 			except Exception as e:
-				logger.warning(f"프레임 변환 중 오류 발생: {e}")
+				loki.warning(f"프레임 변환 중 오류 발생: {e}")
 				continue
 		process.stdin.close()
 		process.wait()
@@ -445,7 +445,7 @@ class MainWindow(QtWidgets.QMainWindow ):
 								'app_fk_id' : -1 } )
 				print (f"send_app_access_log : ws{ws} ==> status : {status}")
 			else:
-				logger.error(f"ws: {ws} 없음")
+				loki.error(f"ws: {ws} 없음")
 
 	def closeEvent(self, event):
 		"""
@@ -941,8 +941,8 @@ class MainWindow(QtWidgets.QMainWindow ):
 			appID = cur_tab_wid.objectName().split('_')[-1]
 			return cur_tab_wid, int(appID), self.curTabs.currentIndex()
 		except Exception as e:
-			logger.error(f"MainWindow : __get_cur_tab_info : {e}")
-			logger.error(f"MainWindow : __get_cur_tab_info : {traceback.format_exc()}")
+			loki.error(f"MainWindow : __get_cur_tab_info : {e}")
+			loki.error(f"MainWindow : __get_cur_tab_info : {traceback.format_exc()}")
 			return None, None, None
 		
 	def _getTabIndexByObjectName(self, object_name: str) -> int:
@@ -1066,7 +1066,7 @@ def main():
 				return 0
 
 	res = None
-	if INFO.IS_DEV:
+	if INFO.IS_FACELOGIN:
 		login_face = Face_Recognition_Login(			
 			verify_url='ai-face/user-face/facelogin_via_rpc/',
 			is_hidden=False,
@@ -1089,6 +1089,7 @@ def main():
 	else:
 		login = Login()    
 		if login.exec():
+			loki.info( msg=f"{INFO.USERNAME} login success" )
 			window=MainWindow()
 			with loop:
 				# WS 시작을 태스크로 걸고, Qt 앱을 돌리면 끝.

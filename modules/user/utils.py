@@ -910,7 +910,8 @@ def get_AbsolutePath(path):
 	cur_dir = str(pathlib.Path(__file__).parent.absolute())
 	return cur_dir+path
 
-def get_IP_Hostname():
+def get_IP_Hostname() -> tuple[str, str, bool]:
+	""" return (ip, hostname, is_success) """
 	try: 
 		hostname = socket.gethostname()
 		s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)

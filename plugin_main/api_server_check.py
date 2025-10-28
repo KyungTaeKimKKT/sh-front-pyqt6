@@ -72,21 +72,14 @@ class Api_Server_Check(QObject):
         try:
             # logger.debug(f"check_api_server: {self.url}")
 
-            url = INFO.URI_FASTAPI + self.url
+            url = f"http://{INFO.API_SERVER}:{INFO.HTTP_PORT}/{self.url}"
             response = requests.get(url)
-            if response.status_code == 200:
-                _json = response.json()
-                ###{'status': 'success', 'client_ip': '192.168.7.108'}
-                # logger.debug(f"check_api_server: {_json}")
-                event_bus.publish(self.event_bus_type, True)
+            response.raise_for_status()
+            _json = response.json()
+            ###{'status': 'success', 'client_ip': '192.168.7.108'}
+            # logger.debug(f"check_api_server: {_json}")
+            event_bus.publish(self.event_bus_type, True)
 
-            else:
-                logger.error(f"check_api_server: {response.status_code}")
-                raise Exception(f"API 서버 확인 중 오류 발생:")
-            
-            # _isOk, _ = APP.API.getObj_byURL(self.url, timeout=5)
-            # if not _isOk:   
-            #     raise Exception(f"API 서버 확인 중 오류 발생: {_}")
         except Exception as e:
             logger.error(f"API 서버 확인 중 오류 발생: {str(e)}")
             logger.error(traceback.format_exc())

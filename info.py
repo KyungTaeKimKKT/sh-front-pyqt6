@@ -4,12 +4,22 @@ import platform
 import traceback
 from config import Config as APP
 
-import datetime
+import datetime, socket
 
 if TYPE_CHECKING:
     from PyQt6.QtWidgets import QMainWindow
     from PyQt6.QtGui import QAction
 
+def get_IP_Hostname() -> tuple[str, str, bool]:
+	""" return (ip, hostname, is_success) """
+	try: 
+		hostname = socket.gethostname()
+		s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+		s.connect(("168.126.63.1", 80))
+		return ( s.getsockname()[0] , hostname , True)
+	except Exception as e:
+
+		return ( None, None, False)
 
 class Info_SW_Singleton:
     _instance = None
@@ -66,19 +76,28 @@ class Info_SW_Singleton:
     IC_ENABLE = False
     IS_DebugMode = False
     IS_DEV = True
+    IS_FACELOGIN = False
     MAIN_WINDOW:QMainWindow|None = None
+
+    HOSTNAME = None
+    IP = None
     # API_SERVER = 'mes.swgroup.co.kr'
     # API_SERVER = '192.168.7.129'
-    API_SERVER = '192.168.7.108'
+    API_SERVER = 'drf.service.sh'
+    WS_SERVER = 'ws.service.sh'
+    FASTAPI_SERVER = 'fastapi.service.sh'
+
+    LOKI_URL = 'http://loki.logging.sh/loki/api/v1/push'
+    LOKI_ENABLE = True
     
-    FASTAPI_PORT = 9997
-    # WS_SERVER = 'mes.swgroup.co.kr'
-    # WS_SERVER = '192.168.7.129'
-    WS_SERVER = '192.168.7.108'
+    FASTAPI_PORT = 80
+    # # WS_SERVER = 'mes.swgroup.co.kr'
+    # # WS_SERVER = '192.168.7.129'
+    # WS_SERVER = '192.168.7.108'
     IP_SOCKET_SERVER = '127.0.0.1'
     PORT_SOCKET_SERVER = 50000
-    HTTP_PORT = 9999
-    WS_PORT = 9998
+    HTTP_PORT = 80
+    WS_PORT = 80
     WS_EnableTrace = False
     TEMP = None
     
@@ -561,6 +580,23 @@ class Info_SW_Singleton:
         print ( "IS_APP_ADMIN : ", self.IS_APP_ADMIN )
         return self.IS_APP_ADMIN
 
+    def _get_IP(self) -> str:
+        if self.IP is None:
+            self.IP, self.HOSTNAME, _success = get_IP_Hostname()
+            if not _success:
+                self.IP = None
+                self.HOSTNAME = None
+                return "unknown"
+        return self.IP
+
+    def _get_HOSTNAME(self) -> str:
+        if self.HOSTNAME is None:
+            self.IP, self.HOSTNAME, _success = get_IP_Hostname()
+            if not _success:
+                self.IP = None
+                self.HOSTNAME = None
+                return "unknown"
+        return self.HOSTNAME
     
     def _get_디자인의뢰_중요도(self):
         return 20
